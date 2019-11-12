@@ -4,8 +4,6 @@ import() {
     local imported=
     if [[ $OPENJAVABEAN_CLASSPATH ]]; then
         local classpathfullpath="$OPENJAVABEAN_CLASSPATH/$fullpath"
-            echo "$classpathfullpath"
-
         if [[ -f "$classpathfullpath" ]]; then
             source "$classpathfullpath"
             imported=1
