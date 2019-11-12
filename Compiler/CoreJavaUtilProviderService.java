@@ -65,10 +65,28 @@ class JavaCompilerBeanClassProviderClassInstanceClass implements JavaBeanClassBa
     }
 
     @Bean
-    private() { public "$@" }
+    private() {
+        local acaller="$(caller)"
+        local funcline="$(_get_next_line "$acaller")"
+        local funcname="$(grep -oE '[A-Za-z0-9_]+' <<< "$funcline")"
+        local function_name="this.$funcname"
+        local function_source="function this.${funcname}() { $funcname \"\$@\"; };"
+        eval "$function_source"
+        local function_source2="function ${current_class}.${funcname}() { $funcname \"\$@\"; };"
+        eval "$function_source2"
+    }
     
     @Bean
-    protected() { private "$@" }
+    protected() {
+        local acaller="$(caller)"
+        local funcline="$(_get_next_line "$acaller")"
+        local funcname="$(grep -oE '[A-Za-z0-9_]+' <<< "$funcline")"
+        local function_name="this.$funcname"
+        local function_source="function this.${funcname}() { $funcname \"\$@\"; };"
+        eval "$function_source"
+        local function_source2="function ${current_class}.${funcname}() { $funcname \"\$@\"; };"
+        eval "$function_source2"
+    }}
     
     @Bean
     final() { :; }
