@@ -1,0 +1,10 @@
+#!/bin/bash
+
+_BIN_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+source "$_BIN_PATH/../Compiler/MinimalClassPathDefinitionProvider.java"
+
+import CoreJavaUtilProviderService;
+import JavaCompilerBean;
+
+JavaCompilerBean.java_compiler_compile_program "$@"

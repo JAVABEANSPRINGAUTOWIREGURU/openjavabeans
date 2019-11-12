@@ -13,7 +13,7 @@ and does nothing.
 
 Next, you execute the compiled java file, provided it is written in JavaBeans-compliant Java:
 
-./Compiler/java <path-to-java-file>.java
+./Compiler/openjavabean <path-to-java-file>.java
 
 ENVIRONMENT VARIABLES
 
@@ -22,4 +22,4 @@ ENVIRONMENT VARIABLES
 
 EXAMPLES
 
-./Compiler/java ./Examples/Main.java
+./Compiler/openjavabean ./Examples/Main.java
