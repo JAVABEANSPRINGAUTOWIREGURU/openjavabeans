@@ -65,10 +65,10 @@ class JavaCompilerBeanClassProviderClassInstanceClass implements JavaBeanClassBa
     }
 
     @Bean
-    private() { :; }
+    private() { public "$@" }
     
     @Bean
-    protected() { :; }
+    protected() { private "$@" }
     
     @Bean
     final() { :; }
